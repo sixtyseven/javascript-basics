@@ -9,7 +9,7 @@
         factory(exports);
     } else {
         // Browser globals
-        root.avama = typeof avama === "undefined" ? {} : avama;
+        root.globalModule = typeof globalModule === "undefined" ? {} : avama;
         factory(root.avama);
     }
 }(this, function (exports) {
