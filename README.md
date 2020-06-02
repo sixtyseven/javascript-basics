@@ -1,5 +1,7 @@
 ```js
 
+// create a UMD pattern
+
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
@@ -8,20 +10,19 @@
         // CommonJS
         factory(exports);
     } else {
-        // Browser globals
-        root.globalModule = typeof globalModule === "undefined" ? {} : avama;
-        factory(root.avama);
+        // Browser globals with namespace
+        root.globalNameSpace = typeof globalNameSpace === "undefined" ? globalNameSpace : {};
+        factory(root.globalNameSpace);
     }
 }(this, function (exports) {
 
-    function returnHello() {
-        return "hello";
+    function SubModuleName() {
+
     }
+
 
     // attach properties to the exports object to define
     // the exported module properties.
-    exports.subModuleName = {
-        returnHello: returnHello
-    };
+    exports.SubModuleName: SubModuleName
 }));
 ```
